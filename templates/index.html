@@ -1,0 +1,15 @@
+{% extends 'base_generic.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello Blog</title>
+  </head>
+  {% block content %}
+
+  <body>
+    <h1 class="text-blue-800">{{ message }}</h1>
+    <p>Author: {{ author }}</p>
+  </body>
+  {% endblock %}
+</html>

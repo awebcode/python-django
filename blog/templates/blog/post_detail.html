@@ -1,0 +1,10 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>{{ post.title }}</h1>
+  <p>{{ post.content }}</p>
+  <a href="{% url 'blog-update' post.pk %}">Edit</a>
+  <form action="{% url 'blog-delete' post.pk %}" method="post">{% csrf_token %}
+    <input type="submit" value="Delete">
+  </form>
+{% endblock %}

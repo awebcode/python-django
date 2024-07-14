@@ -1,0 +1,26 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Django + Tailwind CSS{% endblock %}</title>
+     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+     {% tailwind_css %}
+</head>
+<body>
+    <header>
+        <h1>My Blog Template</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'blog-list' %}">Home</a></li>
+        </ul>
+    </nav>
+    <div class="container bg-green-100 h-screen w-screen">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <h1 class="bg-blue-200">Blog Posts</h1>
+  <a href="{% url 'blog-create' %}" class="text-emerald-500 text-6xl"> Create New </a>
+  <ul class="list-disc">
+    {% for post in posts %}
+      <li><a href="{% url 'blog-detail' post.pk %}">{{ post.title }}</a></li>
+       <p>{{ post.content }}</p>
+    {% endfor %}
+  </ul>
+{% endblock %}
